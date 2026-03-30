@@ -1,0 +1,30 @@
+/* MODULE 3 */
+/* COUNT */
+
+
+/* 1. Count the number of products */
+ SELECT COUNT(product_id) as num_of_products --nothing to group by, we just asked for the whole thing
+ FROM product
+ 
+/* 2. How many products per product_qty_type */
+SELECT product_qty_type, COUNT(product_id) as num_of_products
+FROM product
+GROUP BY product_qty_type
+
+/* 3. How many products per product_qty_type and per their product_size */
+SELECT product_size, product_qty_type,
+COUNT(product_id) as num_of_products
+FROM product
+GROUP BY product_size, product_qty_type
+
+
+/* COUNT DISTINCT 
+    4. How many unique products were bought */
+SELECT COUNT(DISTINCT product_id) as bought_products
+FROM customer_purchases;
+
+-- you could manually check how many rows are returned by the following: 
+-- SELECT DISTINCT(product_id)
+-- FROM customer_purchases
+
+--------------------------------------------------------------------------------------------------------------------------------------------

@@ -106,7 +106,8 @@ Please do not pick the exact same tables that I have already diagrammed. For exa
 	- <img src="./images/01_farmers_market_conceptual_model.png" width="600">
 - The column names can be found in a few spots (DB Schema window in the bottom right, the Database Structure tab in the main window by expanding each table entry, at the top of the Browse Data tab in the main window)
 
-***
+############################## Done ####################################
+*** 
 
 ## Section 2:
 You can start this section following *session 2*.
@@ -209,5 +210,9 @@ Consider, for example, concepts of fariness, inequality, social structures, marg
 
 
 ```
-Your thoughts...
+One major data system I encounter in my day-to-day life is the South Korean identity verification system. In brief, identity verification requires a mobile phone number, full government name, and/or digital certificate as a composite key tied to your national ID, banking info, and government records. This data system design prioritizes cybersecurity/fraud prevention/efficiency and real-name accountability over accessibility and inclusiveness.
+
+Historically, the primary reason for the design of this centralized resident registration system was to eliminate the need for explicit input of resident registration numbers online (i.e., to mitigate risk against major data breaches). The secondary reason was to remove harmful anonymity from online platforms, since any user registered to any site would be accountable.
+
+The design is rational but narrow and unfair. It is sufficient for most Korean citizens residing in Korea, but acts as a barrier to Korean citizens without mobile phone numbers as well as non-Korean citizens more broadly. As a Canadian citizen of Korean ethnicity, I regularly run into issues with login/registration/authentication because I don't maintain a Korean phone number. All input fields are designed around domestic residency and standardized identity inputs (English characters not allowed, or no separate fields for first and last name, or 5-character limits for names). The "expected" user is a resident with Korean government-issued credentials and enough financial stability to maintain a mobile phone number. Outside of this set, people have to invest a significant amount of time and effort for access/inclusion to these platforms. 
 ```
