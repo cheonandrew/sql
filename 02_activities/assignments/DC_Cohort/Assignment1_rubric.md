@@ -18,7 +18,7 @@
 - Any format acceptable so long as a "logical model"
 
 ## Section 2
-- *All questions have been attempted** 
+- **All questions have been attempted** 
 - **The following questions return the correct result set:** 
   - WHERE, Question 2
   - JOIN Question 1
