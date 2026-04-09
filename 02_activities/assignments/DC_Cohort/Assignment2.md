@@ -56,7 +56,32 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+The CUSTOMER_ADDRESS table can be structured in either of these two ways:
+Type 1 customer_address (overwrite changes)
+- customer_id *
+- street_address_1
+- street_address_2
+- city
+- state_province
+- postal_code
+- country
+- updated_on
+Only one row of current address information is maintained per customer. When the customer changes address, the old address is overwritten.
+
+Type 2 customer_address (retain changes)
+- customer_address_key *
+- customer_id
+- street_address_1
+- street_address_2
+- city
+- state_province
+- postal_code
+- country
+- effective_start_date
+- effective_end_date
+- is_current
+Every row of address information is maintained per customer with a label that indicates whether it is current or not. When the customer changes address, the old address is saved and the new address is appended as a new row for that customer_id and can be indexed using the customer_address_key.
+
 ```
 
 ***
@@ -191,5 +216,14 @@ Consider, for example, concepts of labour, bias, LLM proliferation, moderating c
 
 
 ```
-Your thoughts...
-```
+Invisible labor, underpaid labor, and invisible bias: these are major ethical issues at the core of Vicki's article. As a behavioural neuroscience PhDc and a recording artist, these are core issues that inform my perspective on the ethics of AI usage across the arts and sciences. 
+
+Most neuroscience researchers would agree that the terms used to describe AI are idealogically loaded. Without getting deep into the nomenclature debate, consider how terms like "artificial intelligence" and "generative AI" create semantic distance from the exploitation required to train, scale, and deploy these systems. In what sense is it "artificial" or "generative" if the underlying architecture was derived entirely from human input, human judgment, human expression? The word "artificial" somewhat sanitizes the origins of the "intelligence", but in the end, it is human "intelligence" and human expression that have been compressed to generate these AI models. Broadly speaking, that derivation was performed without any meaningful consent or compensation.
+
+My perspectives on AI usage diverge between the sciences and arts. For example, in my scientific research, I have been using AI extensively to debug, refactor, and upgrade my calcium imaging data analysis pipelines. "Utility" is a sufficient metric for evaluating the use of AI in this context. This is because the value of my code rests entirely on its functionality. I make the executive decisions on my parameters, thresholds, and structures, while AI accelerates and scales the buildout and mathematics underlying my analysis pipelines. The pipeline is an instrument pointed at "ground truth" that exists entirely independent of me. Yes, AI influences the analysis architecture that I operate within, but those shapes existed before AI. Ultimately, AI represents a new instance of a known category of methodological risk, and our field has longstanding mechanisms to correct these through peer-review, replication, and open source. 
+
+On the other hand, I believe the conceptual framework of "utility" is irrelevant to the moral justification of using AI to produce entire musical works. Obviously, AI has "utility" in the artistic process--that's why people prompt AI to output art-like artifacts. What I'm claiming is that "utility" is not the metric that reveals merit in this domain. One major standard that end-to-end AI generation cannot fulfil is the "artistic process". Every tool preceding AI has been an extension of execution (e.g., digital plugins, instruments, MIDI, etc.), therefore engaging the artistic process: practice, perspective, synthesis, collaboration, and direct dialogue with the medium. Humans engaging in the artistic process generate the "fingerprint", the combined "source input variance", from the interactions between a unique genome and its unique subset of lived experience and its existential stakes. That combination seems to be the key differentiator... Human neural networks and AI neural nets are both pattern-matching mechanisms, but only humans are evoking these patterns from inside a specific, unrepeatable life, under conditions of mortality, desire, loss, survival, and embodied experience. These are the conditions from which the "artistic process" emerges. This is where we source "narrative" and therefore "meaning". 
+
+AI does not replicate these conditions. AI models have no stakes in their outputs, as it costs the model nothing to produce something. Everything AI "knows" about making art is a lossy, homogenized "average" of human culture, obtained by exploiting human labor with no meaningful credit or attribution. AI-generated artifacts have no unique history, genetic background, cultural architecture, and most importantly, no stake. There is no room for perspective in the execution layer. It may be statistically coherent and aesthetically competent, but it is narratively empty. That is close to the opposite of a human artistic process. "Prompting" AI to create a song is not an instance of creative direction that mirrors human creative direction. The human is entirely removed from the execution level. I hope we as a culture maintain the clarity to separate the human artistic process from the end-to-end use of AI to generate "art". It is the only way for us to contend with the ethical issues tied to AI usage in the arts.  
+
+``` 
